@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AIC Hackday</title>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <style>
+
+      body {
+  background-color: #f0f0f0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+}
+
+a {
+  color: #444;
+  font-size: 16px;
+}     
+      #video-container {
+        width: 840px;
+        height: 472px;
+        margin-bottom: 20px;
+      }
+      .text-container {
+        font-size: 12px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="video-container"></div>
+    <div id="text-container" class="text-container">Loading...</div>
+    <script>
+      // This code loads the YouTube API and embeds the video
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('video-container', {
+          videoId: 'hd2D-83tSyU',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
+          updateText();
+          setInterval(updateText, 1000);
+        }
+      }
+      function updateText() {
+        var currentTime = player.getCurrentTime();
+        var textContainers = document.querySelectorAll('.text-container');
+        textContainers.forEach(function(textContainer) {
+          var html = "";
+          if (currentTime >= 1 && currentTime < 9) {
+            html = "<a href='https://www.artic.edu/artworks/230193/lion-one-of-a-pair-north-pedestal'target='_blank' >Lion (One of a Pair, North Pedestal)</a><br>1893<br>Edward Kemeys<br><br><a href='https://www.artic.edu/artworks/656/lion-one-of-a-pair-south-pedestal'target='_blank' >Lion (One of a Pair, South Pedestal) </a><br>1893<br>Edward Kemeys";
+          } else if (currentTime >= 9 && currentTime < 27) {
+            html = "<a href='https://www.artic.edu/artworks/20684/paris-street-rainy-day'target='_blank' >Paris Street, Rainy Day</a><br>1877<br>Gustave Caillebotte<br><br><a href='https://www.artic.edu/artworks/11320/adam'target='_blank'>Adam</a><br>1924<br>Auguste Rodin<br><br><a href='https://www.artic.edu/artworks/60812/merahi-metua-no-tehamana-tehamana-has-many-parents-or-the-ancestors-of-tehamana'target='_blank'>Merahi metua no Tehamana (Tehamana Has Many Parents or The Ancestors of Tehamana)</a><br>1893<br>Paul Gauguin<br><br><a href='https://www.artic.edu/artworks/19339/arlesiennes-mistral'target='_blank'>Arlésiennes (Mistral)</a><br>1888<br>Paul Gauguin";
+          }
+
+          else if (currentTime >= 29 && currentTime < 32) {
+            html = "<a href='https://www.artic.edu/artworks/111628/nighthawks'target='_blank' >Nighthawks</a><br>1942<br>Edward Hopper<br>";
+          }
+
+          else if (currentTime >= 33 && currentTime < 36) {
+            html = "<a href='https://www.artic.edu/artworks/8991/improvisation-no-30-cannons'target='_blank'>Improvisation No. 30 (Cannons)</a><br>1913<br>Vasily Kandinsky<br><br><a href='https://www.artic.edu/artworks/8987/painting-with-green-center'target='_blank'>Painting with Green Center</a><br>1913<br>Vasily Kandinsky<br></a>";
+          }
+
+          else if (currentTime >= 37 && currentTime < 40) {
+            html = "<a href='https://www.artic.edu/artworks/75646/three-men-walking-ii'target='_blank'>Three Men Walking II</a><br>1948/49<br>Alberto Giacometti<br><br><a href='https://www.artic.edu/artworks/23968/nude-under-a-pine-tree'target='_blank'>Nude under a Pine Tree</a><br>1959<br>Pablo Picasso<br><br><a href='https://www.artic.edu/artworks/23368/walking-man-ii'target='_blank'>Walking Man II</a><br>1960<br>Alberto Giacometti";
+          }
+
+          else if (currentTime >= 41 && currentTime < 43) {
+            html = "<a href='https://www.artic.edu/artworks/28096/the-waterfall'target='_blank'>The Waterfall</a><br>1910<br>Henri Rousseau<br></a><br><br><a href='https://www.artic.edu/artworks/27984/woman-before-an-aquarium'target='_blank'>Woman before an Aquarium</a><br>1921–23<br>Henri Matisse<br><br><a href='https://www.artic.edu/artworks/28067/the-old-guitarist'target='_blank'>The Old Guitarist</a><br>1904<br>Pablo Picasso";
+          }
+
+                    else if (currentTime >= 44 && currentTime < 47) {
+            html = "<a href='https://www.artic.edu/artworks/59798/winged-figure'target='_blank'>Winged Figure</a><br>1889<br>Abbott Handerson Thayer<br></a><br><br><a href='https://www.artic.edu/artworks/111442/the-child-s-bath'target='_blank'>The Child’s Bath</a><br>1893<br>Mary Cassatt<br><br><a href='https://www.artic.edu/artworks/107050/amor-caritas'target='_blank'>Amor Caritas</a><br>1899<br>Augustus Saint-Gaudens";
+          }
+
+                    else if (currentTime >= 49 && currentTime < 51) {
+            html = "<a href='https://www.artic.edu/artworks/27987/jacques-and-berthe-lipchitz'target='_blank'>Jacques and Berthe Lipchitz</a><br>1916<br>Amedeo Modigliani<br></a><br><br><a href='https://www.artic.edu/artworks/107050/amor-caritas'target='_blank'>Amor Caritas</a><br>1899<br>Augustus Saint-Gaudens<br>";
+          }
+
+                              else if (currentTime >= 52 && currentTime < 55) {
+            html = "<a href='https://www.artic.edu/artworks/16964/the-plough-and-the-song'target='_blank'>The Plough and the Song</a><br>1947<br>Arshile Gorky<br></a><br><br><a href='https://www.artic.edu/artworks/79379/tanktotem-i'target='_blank'>Tanktotem I</a><br>1952<br>David Smith<br><br><a href='https://www.artic.edu/artworks/83642/greyed-rainbow'target='_blank'>Greyed Rainbow</a><br>1953<br>Jackson Pollock<br><br><a href='https://www.artic.edu/artworks/54800/untitled'target='_blank'>Untitled</a><br>1945<br>Isamu Noguchi<br></a><br><br><a href='https://www.artic.edu/artworks/15156/the-golden-wall'target='_blank'>The Golden Wall</a><br>1961<br>Hans Hofmann";
+          }
+
+                              else if (currentTime >= 56 && currentTime < 60) {
+            html = "<a href='https://www.artic.edu/artworks/100226/daisies'target='_blank'>Daisies</a><br>1939<br>Henri Matisse<br></a><br><br><a href='https://www.artic.edu/artworks/24845/white-negress-ii'target='_blank'>White Negress II</a><br>1928<br>Constantin Brancusi<br><br><a href='https://www.artic.edu/artworks/79307/bathers-by-a-river'target='_blank'>Bathers by a River</a><br>1917<br>Henri Matisse";
+          }
+
+                              else if (currentTime >= 61 && currentTime < 64) {
+            html = "<a href='https://www.artic.edu/artworks/53039/treasure-hunt'target='_blank'>Treasure Hunt</a><br>1978<br>Jean Dubuffet<br><br><a href='https://www.artic.edu/artworks/11441/working-model-for-unesco-reclining-figure'target='_blank'>Working Model for UNESCO Reclining Figure</a><br>1957<br>Henry Spencer Moore<br><br><a href='https://www.artic.edu/artworks/5357/the-red-armchair'target='_blank'>The Red Armchair</a><br>1931<br>Pablo Picasso<br><br><a href='https://www.artic.edu/artworks/84239/portrait-of-sylvette-david'target='_blank'>Portrait of Sylvette David</a><br>1954<br>Pablo Picasso";
+          }
+
+                              else if (currentTime >= 65 && currentTime < 68) {
+            html = "<a href='https://www.artic.edu/artworks/87467/edouard-manet'target='_blank'>Édouard Manet</a><br>1867<br>Henri Fantin-Latour<br></a><br><br><a href='https://www.artic.edu/artworks/14574/henri-degas-and-his-niece-lucie-degas-the-artist-s-uncle-and-cousin'target='_blank'>Henri Degas and His Niece Lucie Degas</a><br>1875<br>Edgar Degas<br><br><a href='https://www.artic.edu/artworks/14572/the-millinery-shop'target='_blank'>The Millinery Shop</a><br>1879<br>Edgar Degas<br><br><a href='https://www.artic.edu/artworks/6727/portrait-of-balzac'target='_blank'>Portrait of Balzac</a><br>1893<br>Auguste Rodin<br><br><a href='https://www.artic.edu/artworks/81546/the-petite-creuse-river'target='_blank'>The Petite Creuse River</a><br>1889<br>Claude Monet<br><br><a href='https://www.artic.edu/artworks/81545/stacks-of-wheat-sunset-snow-effect'target='_blank'>Stacks of Wheat (Sunset, Snow Effect)</a><br>1890<br>Claude Monet<br><br><a href='https://www.artic.edu/artworks/59927/boats-on-the-beach-at-etretat'target='_blank'>Boats on the Beach at Étretat</a><br>1885<br>Claude Monet<br><br><a href='https://www.artic.edu/artworks/59944/the-laundress'target='_blank'>The Laundress</a><br>1877<br>Pierre-Auguste Renoir<br><br><a href='https://www.artic.edu/artworks/14647/young-woman-sewing'target='_blank'>Young Woman Sewing</a><br>1879<br>Pierre-Auguste Renoir";
+          }
+
+                              else if (currentTime >= 69 && currentTime < 72) {
+            html = "<a href='https://www.artic.edu/artworks/16648/woman-in-front-of-a-still-life-by-cezanne'target='_blank'>Woman in Front of a Still Life by Cezanne</a><br>1890<br>Paul Gauguin<br></a><br><br><a href='https://www.artic.edu/artworks/16146/equestrienne-at-the-cirque-fernando'target='_blank'>Equestrienne (At the Cirque Fernando)</a><br>1887<br>Henri de Toulouse-Lautrec<br><br><a href='https://www.artic.edu/artworks/65811/the-plate-of-apples'target='_blank'>The Plate of Apples</a><br>1877<br>Paul Cezanne<br><br><a href='https://www.artic.edu/artworks/14586/the-poet-s-garden'target='_blank'>The Poet’s Garden</a><br>1888<br>Vincent van Gogh<br>";
+          }
+
+                              else if (currentTime >= 73 && currentTime < 77) {
+            html = "<a href='https://www.christies.com/lot/lot-georges-mathieu-1921-2012-fourth-avenue-5754985/?'target='_blank'>Fourth Avenue</a><br>1957<br>Georges Mathieu<br><br><a href='https://www.artic.edu/artworks/5357/the-red-armchair'target='_blank'>The Red Armchair</a><br>1931<br>Pablo Picasso<br><br><a href='https://www.artic.edu/artworks/84239/portrait-of-sylvette-david'target='_blank'>Portrait of Sylvette David</a><br>1954<br>Pablo Picasso<br><br><a href='https://www.artic.edu/artworks/11441/working-model-for-unesco-reclining-figure'target='_blank'>Working Model for UNESCO Reclining Figure</a><br>1957<br>Henry Spencer Moore<br><br><a href='https://www.artic.edu/artworks/100252/two-seeds'target='_blank'>Two Seeds</a><br>1983<br>Francesco Clemente";
+          }
+
+                              else if (currentTime >= 77 && currentTime < 80) {
+            html = "<a href='https://www.artic.edu/artworks/52146/still-life-with-fish-and-shells'target='_blank'>Still Life with Fish and Shells</a><br>1898<br>Baron James Ensor<br><br><a href='https://www.artic.edu/artworks/27992/a-sunday-on-la-grande-jatte-1884'target='_blank'>A Sunday on La Grande Jatte</a><br>1884<br>Georges Seurat<br><br><a href='https://www.artic.edu/artworks/8975/forest-at-martigues'target='_blank'>Forest at Martigues</a><br>1908<br>André Derain<br><br><a href='https://www.artic.edu/artworks/8993/the-stronghold'target='_blank'>The Stronghold</a><br>1912<br>Amadeo de Souza Cardoso<br>";
+          }
+
+                                        else if (currentTime >= 81 && currentTime < 88) {
+            html = "<a href='https://www.artic.edu/artworks/109439/america-windows'target='_blank'>America Windows</a><br>1977<br>Marc Chagall<br>";
+          }
+
+      
+
+                                       else if (currentTime >= 90 && currentTime < 92) {
+            html = "<a href='https://www.artic.edu/artworks/27992/a-sunday-on-la-grande-jatte-1884'target='_blank'>A Sunday on La Grande Jatte</a><br>1884<br>Georges Seurat<br>";
+          }
+
+
+                                                  else if (currentTime >= 93 && currentTime < 95) {
+            html = "<a href='https://www.artic.edu/artworks/109439/america-windows'target='_blank'>America Windows</a><br>1977<br>Marc Chagall<br>";
+          }
+
+
+                                       else if (currentTime >= 97 && currentTime < 98) {
+            html = "<a href='https://www.artic.edu/artworks/27992/a-sunday-on-la-grande-jatte-1884'target='_blank'>A Sunday on La Grande Jatte</a><br>1884<br>Georges Seurat<br>";
+          }
+
+
+
+
+                                                  else if (currentTime >= 98 && currentTime < 100) {
+            html = "<a href='https://www.artic.edu/artworks/109275/mother-and-child'target='_blank'>Mother and Child</a><br>1921<br>Pablo Picasso<br>";
+          }
+
+
+
+                                       else if (currentTime >= 100 && currentTime < 102) {
+            html = "<a href='https://www.artic.edu/artworks/27992/a-sunday-on-la-grande-jatte-1884'target='_blank'>A Sunday on La Grande Jatte</a><br>1884<br>Georges Seurat<br>";
+          }
+
+                                        else if (currentTime >= 102 && currentTime < 103) {
+            html = "<a href='https://www.artic.edu/artworks/109275/mother-and-child'target='_blank'>Mother and Child</a><br>1921<br>Pablo Picasso<br>";
+          }
+
+                                       else if (currentTime >= 104 && currentTime < 105) {
+            html = "<a href='https://www.artic.edu/artworks/27992/a-sunday-on-la-grande-jatte-1884'target='_blank'>A Sunday on La Grande Jatte</a><br>1884<br>Georges Seurat<br>";
+          }
+                                       else if (currentTime >= 109 && currentTime < 110) {
+            html = "<a href='https://www.artic.edu/artworks/27992/a-sunday-on-la-grande-jatte-1884'target='_blank'>A Sunday on La Grande Jatte</a><br>1884<br>Georges Seurat<br>";
+          }
+                                       else if (currentTime >= 111 && currentTime < 112) {
+            html = "<a href='https://www.artic.edu/artworks/27992/a-sunday-on-la-grande-jatte-1884'target='_blank'>A Sunday on La Grande Jatte</a><br>1884<br>Georges Seurat<br>";
+          }
+
+
+
+
+          textContainer.innerHTML = html;
+        });
+      }
+    </script>
+  </body>
+</html>
